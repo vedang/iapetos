@@ -10,19 +10,19 @@
                                     :password :env/clojars_password
                                     :sign-releases true}]]
 
-  :dependencies [[org.clojure/clojure "1.10.3" :scope "provided"]
-                 [io.prometheus/simpleclient "0.12.0"]
-                 [io.prometheus/simpleclient_common "0.12.0"]
-                 [io.prometheus/simpleclient_pushgateway "0.12.0"]
-                 [io.prometheus/simpleclient_hotspot "0.12.0" :scope "provided"]]
+  :dependencies [[org.clojure/clojure "1.11.1" :scope "provided"]
+                 [io.prometheus/simpleclient "0.16.0"]
+                 [io.prometheus/simpleclient_common "0.16.0"]
+                 [io.prometheus/simpleclient_pushgateway "0.16.0"]
+                 [io.prometheus/simpleclient_hotspot "0.16.0" :scope "provided"]]
   :profiles {:dev
-             {:dependencies [[org.clojure/test.check "1.1.0"]
+             {:dependencies [[org.clojure/test.check "1.1.1"]
                              [aleph "0.4.6"]
                              [jmh-clojure "0.4.1"]]
               :source-paths ["dev"]
               :global-vars {*warn-on-reflection* true}}
              :codox
-             {:plugins [[lein-codox "0.10.0"]]
+             {:plugins [[lein-codox "0.10.8"]]
               :dependencies [[codox-theme-rdash "0.1.2"]]
               :codox {:project {:name "iapetos"}
                       :metadata {:doc/format :markdown}
@@ -33,9 +33,9 @@
                                    iapetos.standalone
                                    #"^iapetos\.collector\..+"]}}
              :coverage
-             {:plugins [[lein-cloverage "1.0.9"]]
+             {:plugins [[lein-cloverage "1.2.4"]]
               :pedantic? :warn
-              :dependencies [[org.clojure/tools.reader "1.3.5"]
+              :dependencies [[org.clojure/tools.reader "1.3.7"]
                              [riddley "0.2.0"]]}}
   :aliases {"codox" ["with-profile" "+codox" "codox"]
             "codecov" ["with-profile" "+coverage" "cloverage" "--codecov"]}
